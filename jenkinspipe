@@ -2,12 +2,12 @@ pipeline {
     agent { docker { image 'a65d94de712d' } }
       stages {
         stage('Build') {
-      steps {
+          steps {
 	      checkout scm
 		  
-        sh 'chmod +x app.py'
-        sh 'python app.py'
-		sh '''#!/bin/sh
+               sh 'chmod +x app.py'
+               sh 'python app.py'
+               sh '''#!/bin/sh
 		
 ls -la'''
 		
