@@ -1,15 +1,18 @@
 pipeline {
-    agent { docker { image 'a65d94de712d' } }
+    agent { docker { image}}
       stages {
         stage('Build') {
           steps {
 	      checkout scm
-		  
-               sh 'chmod +x app.py'
-               sh 'python app.py'
-               sh '''#!/bin/sh
-		
-ls -la'''
+		  echo "started build"
+sudo docker build -t vaishnavipasupulati/myfirstapp .
+
+echo "running"
+sudo  docker run  -itd -p 8888:5000 --name catgif1 vaishnavipasupulati/myfirstapp
+
+echo "execute"
+sudo docker exec container sh
+        
 		
       }
     }
