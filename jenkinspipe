@@ -2,11 +2,18 @@ pipeline {
     agent { dockerfile true }
 
       stages {
-        stage('Build') {
+        stage('checkout') {
           steps {
 	      checkout scm
 		  
-		  sh echo "started build"
+		  
+        
+		}
+      }
+	   stage('docker Build') {
+		agent any
+		steps{
+			sh echo "started build"
           sh sudo docker build -t vaishnavipasupulati/myfirstapp .
 
           sh echo "running"
@@ -14,9 +21,9 @@ pipeline {
 
           sh echo "execute"
           sh sudo docker exec container -it sh
-        
 		}
-      }
+	   
+	   }
     }
   }
 
