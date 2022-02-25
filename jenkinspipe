@@ -11,9 +11,9 @@ pipeline {
 		}
       }
 	   stage('docker Build') {
-		agent any
+		agent { dockerfile true }
 		steps{
-			sh echo "started build"
+		
           sh sudo docker build -t vaishnavipasupulati/myfirstapp .
 
           sh echo "running"
