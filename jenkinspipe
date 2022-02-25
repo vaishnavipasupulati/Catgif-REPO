@@ -16,10 +16,6 @@ pipeline {
       }
       steps {
 
-      
-
-        sh echo "running"
-        
 
        
       }
