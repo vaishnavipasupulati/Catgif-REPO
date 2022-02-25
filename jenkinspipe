@@ -7,10 +7,10 @@ pipeline {
 		  
 		  echo "started build"
           sudo docker build -t vaishnavipasupulati/myfirstapp .
-stage("run")
+
           echo "running"
           sudo  docker run  -itd -p 8888:5000 --name catgif1 vaishnavipasupulati/myfirstapp
-stage("execute")
+
           echo "execute"
           sudo docker exec container -it sh
         
