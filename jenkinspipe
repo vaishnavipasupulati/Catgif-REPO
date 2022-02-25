@@ -5,14 +5,7 @@ pipeline {
           steps {
 	      checkout scm
 		  
-		  echo "started build"
-          sudo docker build -t vaishnavipasupulati/myfirstapp .
-
-          echo "running"
-          sudo  docker run  -itd -p 8888:5000 --name catgif1 vaishnavipasupulati/myfirstapp
-
-          echo "execute"
-          sudo docker exec container -it sh
+	
         
 		}
       }
