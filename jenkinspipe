@@ -16,13 +16,12 @@ pipeline {
       }
       steps {
 
-        sh sudo docker build - t vaishnavipasupulati / myfirstapp.
+      
 
         sh echo "running"
-        sh sudo docker run - itd - p 8888: 5000--name catgif1 vaishnavipasupulati / myfirstapp
+        
 
-        sh echo "execute"
-        sh sudo docker exec container - it sh
+       
       }
 
     }
