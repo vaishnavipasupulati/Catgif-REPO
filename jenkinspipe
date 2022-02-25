@@ -5,21 +5,13 @@ pipeline {
 
   stages {
     stage('checkout') {
-      steps {
-        checkout scm
-
-      }
-    }
-    stage('docker Build') {
-      agent {
+	  agent {
         dockerfile true
       }
       steps {
-
         checkout scm
-       
-      }
 
+      }
     }
   }
 }
